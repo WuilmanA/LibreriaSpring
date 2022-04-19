@@ -1,0 +1,120 @@
+    body{
+        background: url(../imagenes/bibioteca.jpg   );
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+.container{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.contenedor1 {
+    width: 100%;
+    padding: 10%;
+    
+}
+
+.formulario{
+    background-color: white ;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h2{
+    margin-top: 90%;
+    font-size: 40px;
+    color: brown ;
+}
+
+h1{
+    text-align: center;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+select,
+option{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+
+
+.input-contenedor{
+    margin-bottom: 15px;
+    
+}
+
+#icono{
+    min-width: 50px;
+    text-align: center;
+    border: none;
+}
+
+.boton{
+    width: 100%;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: grey;
+}
+
+p{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+
+.link:hover{
+    color: grey;
+}
+
+@media(min-width:768px) {
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 50px;
+        border-radius: 5px;
+    }
+    
+}
+
+.nav-item{
+    font-size: 20px;
+}
+
+#h1_index{
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    height: 100%;
+    
+    text-align: left;
+    
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+td, tr {
+    text-align: center;
+}
