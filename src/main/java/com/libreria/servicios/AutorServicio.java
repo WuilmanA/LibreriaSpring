@@ -32,14 +32,14 @@ public class AutorServicio {
     @Transactional(rollbackFor = {Exception.class})
     public void modificar(String id, String nombre) throws ErrorServicio {
 
-        
         Optional<Autor> respuesta = autorRepositorio.findById(id);
+
         if (respuesta.isPresent()) {
             Autor autor = respuesta.get();
             autor.setNombre(nombre);
             autorRepositorio.save(autor);
         }else{
-            throw new ErrorServicio("El librono existe");
+            throw new ErrorServicio("El libro no existe");
         }
 
     }

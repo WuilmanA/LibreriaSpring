@@ -49,7 +49,7 @@
       <h2 style="text-align: center; color: black;">Listar Editorial</h2>
         <thead>
             <tr >
-                <th scope="col ">Id Editorial</th>
+               
                 <th scope="col">Nombre de la Editorial</th>
                 <th scope="col">Activo</th>
                 <th scope="col">Editar Editorial</th>
@@ -59,13 +59,13 @@
         </thead>
         <tbody>
             <tr th:each="editorial:${editoriales}">
-                <td th:text="${editorial.id}"></td>
+                
                 <td th:text="${editorial.nombre}"></td>
                 <td>
                     <span th:if="${editorial.alta==true}">SI</span>
                     <span th:unless="${editorial.alta==true}">NO</span>
                 </td>
-                <td><a href="/"> <button class="btn btn-success">Editar</button></a></td>
+                <td><a th:href="@{/modificarEditorial(id=${__editorial.id__})}"> <button class="btn btn-success">Editar</button></a></td>
                 <td><a href="/"> <button class="btn btn-danger">Dar baja</button></a></td>
             </tr>
            

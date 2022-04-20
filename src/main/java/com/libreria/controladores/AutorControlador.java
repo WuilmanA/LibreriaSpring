@@ -3,8 +3,6 @@ package com.libreria.controladores;
 import com.libreria.entidades.Autor;
 import com.libreria.errores.ErrorServicio;
 import com.libreria.servicios.AutorServicio;
-import com.libreria.servicios.EditorialServicio;
-import com.libreria.servicios.LibroServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,10 +60,6 @@ public class AutorControlador {
     }
     
     
-    
-        
-    
-    
      @GetMapping("/listarAutor")
     public String listarAutor(ModelMap modelo) {
 
@@ -82,6 +76,7 @@ public class AutorControlador {
 
             autorServicio.crear(nombreApellido);
             modelo.put("exito", "El Autor " + nombreApellido + " Se cargo exitosamente");
+            
             return "adminAutor.html";
         } catch (ErrorServicio ex) {
             modelo.put("ErrorServicio", ex.getMessage());

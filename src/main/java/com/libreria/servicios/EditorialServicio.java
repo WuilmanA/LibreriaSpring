@@ -26,19 +26,15 @@ public class EditorialServicio {
 
         editorialRepositorio.save(editorial);
     }
-    
+
     @Transactional(rollbackFor = {Exception.class})
     public void modificar(String id, String nombre) throws ErrorServicio {
-        validar(nombre);
 
         Optional<Editorial> respuesta = editorialRepositorio.findById(id);
 
         if (respuesta.isPresent()) {
-            Editorial editorial = new Editorial();
-
+            Editorial editorial = respuesta.get();
             editorial.setNombre(nombre);
-            editorial.setAlta(true);
-
             editorialRepositorio.save(editorial);
         } else {
             throw new ErrorServicio("La Editorial no existe");
@@ -76,26 +72,25 @@ public class EditorialServicio {
             throw new ErrorServicio("La Editorial no existe");
         }
     }
-    
+
     @Transactional(readOnly = true)
-    public Editorial buscarPorId(String id) throws ErrorServicio{
+    public Editorial buscarPorId(String id) throws ErrorServicio {
         Optional<Editorial> respuesta = editorialRepositorio.findById(id);
-        
+
         if (respuesta.isPresent()) {
-            Editorial editorial=respuesta.get();
+            Editorial editorial = respuesta.get();
             return editorial;
-            
-        }else{
-            throw new ErrorServicio("No existe ese Editorial");
+
+        } else {
+            throw new ErrorServicio("No existe esa Editorial");
         }
     }
-    
-     @Transactional(readOnly = true)
+
+    @Transactional(readOnly = true)
     public List<Editorial> listarTodos() {
         return editorialRepositorio.findAll();
     }
 
-    
     public void validar(String nombre) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre no puede estar vacio");
