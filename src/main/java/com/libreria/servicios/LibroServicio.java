@@ -71,7 +71,8 @@ public class LibroServicio {
             libroRepositorio.save(libro);
 
         } else {
-            throw new ErrorServicio("El libro No existe");
+            throw new ErrorServicio("El libro No existe")
+            ;
         }
 
     }

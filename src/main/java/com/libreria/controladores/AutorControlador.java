@@ -53,7 +53,7 @@ public class AutorControlador {
             
         } catch (ErrorServicio ex) {
             attr.addFlashAttribute("ErrorServicio", ex.getMessage());
-            return "listarAutor.html";
+           
         }
          attr.addFlashAttribute("exito", "Exito modificado");
          return "redirect:/listarAutor";

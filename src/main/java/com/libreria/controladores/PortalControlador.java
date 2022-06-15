@@ -13,9 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PortalControlador {
 
     //****Levanta el Index********
-    @GetMapping
-    public String index() {
-        return "index.html";
+//    @GetMapping("/")
+//    public String index() {
+//        return "index.html";
+//    }
+    
+    @GetMapping("/registrar")
+    public String registro() {
+        return "registrar.html";
+    }
+    
+    @GetMapping ("/loging")
+    public String login() {
+        return "loging.html";
     }
 
 }

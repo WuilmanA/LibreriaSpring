@@ -37,20 +37,24 @@
     </div>
   </nav>
 
-  <form class="formulario">
+    <form class="formulario" th:action="@{/registrar}" method="POST">
     <div class="contenedor1">
       <h1>Registro de Usario</h1>
       <div class="input-contenedor">
         <i class="fa-solid fa-user" id="icono"></i>
-        <input type="text" placeholder="Nombre y Apellido">
+        <input type="text" placeholder="Nombre y Apellido" name="nombreApellido">
       </div>
       <div class="input-contenedor">
         <i class="fa-solid fa-envelope" id="icono"></i>
-        <input type="email" placeholder="Correo Electronico">
+        <input type="email" placeholder="Correo Electronico" name="email">
       </div>
       <div class="input-contenedor">
         <i class="fa-solid fa-key" id="icono"></i>
-        <input type="password" placeholder="Contraseña">
+        <input type="password" placeholder="Contraseña" name="passWord">
+      </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-key" id="icono"></i>
+        <input type="password" placeholder="Confirmar Contraseña" name="confirmarPassWord">
       </div>
       <input type="submit" value="Registrar" class="boton">
       <p>Hola, Si ya estas registrado puedes hacer <a href="/loging" class="link"><strong> Login</strong></a></p>
